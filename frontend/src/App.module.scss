@@ -1,0 +1,157 @@
+.createForm {
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 30px rgba(31, 42, 55, 0.08);
+}
+
+.createForm h2 {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0d1c2e;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d1c2e;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #556b85;
+}
+
+.tasksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.taskCard {
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(31, 42, 55, 0.08);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.taskTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.taskStatus {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #5d9d54;
+}
+
+.taskStatusIncomplete {
+  background: #f27d5a;
+}
+
+.taskDescription {
+  margin: 0 0 16px;
+  color: #4c5d72;
+  line-height: 1.6;
+}
+
+.taskActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.buttonEdit {
+  background: #286ef9;
+  color: white;
+}
+
+.buttonDelete {
+  background: #f15151;
+  color: white;
+}
+
+.editForm {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #c7d0dc;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.95rem;
+  color: #1f2a37;
+  background: #f8fafc;
+}
+
+.textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.formRow {
+  display: grid;
+  gap: 8px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkboxRow input {
+  width: 16px;
+  height: 16px;
+}
+
+.statusMessage {
+  margin: 0 0 20px;
+  color: #324a66;
+}
+
+.errorMessage {
+  margin: 0 0 20px;
+  color: #c33d3d;
+}

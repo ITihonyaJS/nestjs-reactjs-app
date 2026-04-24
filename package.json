@@ -1,0 +1,16 @@
+{
+  "name": "nestjs-reactjs-app",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace @app/nestjs-backend start:dev\" \"yarn workspace @app/reactjs-frontend start\"",
+    "dev:backend": "yarn workspace @app/nestjs-backend start:dev",
+    "dev:frontend": "yarn workspace @app/reactjs-frontend start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
