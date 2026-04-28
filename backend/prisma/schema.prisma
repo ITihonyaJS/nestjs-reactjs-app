@@ -1,13 +1,73 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client"  
+  output          = "../src/generated/prisma"
+  moduleFormat  = "cjs"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "postgresql" 
+}
+
+model Movie {
+  id String @id @default(uuid())
+  title String
+  description String?
+  releaseYear Int @map("release_year")
+  rating Float @default(0.0)
+  isAvailable Boolean @default(false) @map("is_available")
+  genre Genre @default(ACTION)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  reviews Review[] @relation("movie_reviews")
+  actors Actor[] @relation("actor_movies")
+  poster MoviePoster? @relation
+  
+
+  @@map("movies")
+  
+}
+model MoviePoster {
+  id String @id @default(uuid())  
+  url String  
+  movie Movie @relation(fields: [movieId], references: [id])
+  movieId String  @unique @map("movie_id")  
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("movie_posters")
+  
+}
+model Review {
+  id String @id @default(uuid())  
+  text String 
+  rating Decimal @default(0.0)
+  movie Movie @relation("movie_reviews",fields: [movieId], references: [id],onDelete: Cascade)
+  movieId String @map("movie_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("reviews")
+  
+}
+model Actor {
+  id String @id @default(uuid())  
+  name String 
+  movies Movie[] @relation("actor_movies")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("actors")
+  
+}
+
+enum Genre {
+  ACTION
+  COMEDY
+  DRAMA
+  HORROR
+
+  @@map("enum_genres")  
 }

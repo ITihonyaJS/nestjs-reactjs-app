@@ -8,5 +8,6 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.enableCors();
   await app.listen(4200);
+  console.log('App listening on port 4200');
 }
 bootstrap();
