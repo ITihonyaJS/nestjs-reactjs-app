@@ -24,3 +24,10 @@ import { PrismaModule } from './prisma/prisma.module';
   providers: [AppService],
 })
 export class AppModule {}
+
+// //подключение middleware через класс
+// export class AppModule implements NestModule {
+//   configure(consumer: MiddlewareConsumer) {
+//     consumer.apply(LoggerMiddleware).forRoutes('*');
+//   }
+// }
