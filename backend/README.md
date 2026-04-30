@@ -18,6 +18,14 @@ git pull origin main
 git tag -a v0.2.0-prisma -m "Migrate to Prisma"
 git push origin v0.2.0-prisma
 
+# проверить удалённые в origin ветки
+
+git fetch --prune
+
+# удалить удалённые в origin ветки локально
+
+git branch -d feature-name
+
 ### Middlewares
 
 # Используется чаще для логирования ошибок и т.п.
@@ -51,5 +59,23 @@ git push origin v0.2.0-prisma
 
 ```
 Создаётся с помощью createParamDecorator()
+
+```
+
+### Interceptors
+
+# Использование для перехвата и изменения входящих данных или для логирования как и middleware
+
+```
+Выполняется до кода в controller и service
+
+```
+
+### Filters
+
+# Позволяет логировать и обрабатывать ошибки от Nest и делать их кастомными
+
+```
+Выполняется до кода в controller и service
 
 ```

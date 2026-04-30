@@ -50,4 +50,14 @@ export class AppController {
   //     userAgent,
   //   };
   // }
+
+  //проверка работоспособности Interceptor
+  // @Get('@me')
+  // getProfile() {
+  //   return {
+  //     id: 111,
+  //     name: 'ITihonya',
+  //     email: 'itihonya_js@mail.ru',
+  //   };
+  // }
 }
